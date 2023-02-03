@@ -1,0 +1,14 @@
+{
+  "name": "dhx-diagram-package",
+  "version": "5.0.1",
+  "description": "dhtmlxDiagram widget",
+  "homepage": "https://docs.dhtmlx.com/diagram",
+  "private": true,
+  "bugs": {
+    "url": "https://forum.dhtmlx.com",
+    "email": "support@dhtmlx.com"
+  },
+  "main": "./diagram_trial/codebase/diagram.js",
+  "types": "./diagram_trial/codebase/diagram.d.ts",
+  "type": "module"
+}

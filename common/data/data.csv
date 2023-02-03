@@ -1,0 +1,12 @@
+Machine Learning (ML),not have label,Unsupervised Learning
+Machine Learning (ML),have label,Supervised Learning
+Machine Learning (ML),,Explain-ML
+Machine Learning (ML),,Semi-supervied Learning
+Explain-ML,,What-if analytics(counter factual)
+Supervised Learning,,Problem-based Divide
+Problem-based Divide,,Classification
+Problem-based Divide,,Regression
+Supervised Learning,,Algorithm-based Divide
+Algorithm-based Divide,,Tree-based Model
+Algorithm-based Divide,,SVM model
+Algorithm-based Divide,,Linear Model

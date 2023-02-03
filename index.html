@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<title>Knowledge graph visualization</title>
+	<!-- add favicon -->
+	<link rel="icon" type="image/x-icon" href="./common/img/thumbnail.png">
+	<!-- meta block -->
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+	<!-- end meta block -->
+	<link rel="stylesheet" href="./diagram_trial/samples/common/index.css?v=5.0.1">
+	<!-- custom sample head -->
+	<script type="text/javascript" src="./diagram_trial/codebase/diagramWithEditor.js?v=5.0.1"></script>
+	<!-- add diagram script -->
+	<script type = "module" src="./js/diagram.js"></script>
+
+	<link rel="stylesheet" href="./diagram_trial/codebase/diagramWithEditor.css?v=5.0.1">
+	<style>
+		html,
+		body,
+		.dhx_diagram {
+			background: #fff;
+		}
+
+		.dhx_sample-widget {
+			height: calc(100% - 61px);
+		}
+
+		.dhx_diagram,
+		.dhx_sample-controls {
+			background: #FFF;
+		}
+
+		.dhx_sample-container__without-editor {
+			height: calc(100% - 60px);
+		}
+
+		.dhx_sample-container__with-editor,
+		.dhx_sample-widget {
+			height: 100%;
+		}
+	</style>
+	
+</head>
+
+<body>
+	
+	<!-- edit button -->
+	<section id="control" class="dhx_sample-controls">
+		<!--TODO: edit the digram -->
+		<button id = "button-edit" class="dhx_sample-btn dhx_sample-btn--flat">Edit</button>
+
+		<!-- TODO: export to pdf -->
+		<button id = "export-to-pdf" class="dhx_sample-btn dhx_sample-btn--flat">Export to PDF</button>
+
+		<!-- TODO: import file csv -->
+		<button id = "import-csv-file"class="dhx_sample-btn dhx_sample-btn--flat" onclick="">Import CSV</button>
+	</section> 
+	
+
+	<!-- HTML container -->
+	<section id="container" class="dhx_sample-container__without-editor">
+		<!-- component container -->
+		<div class="dhx_sample-widget" id="diagram"></div>
+		<div class="dhx_sample-widget" id="editor" style="display: none;"></div>
+	</section>
+</body>
+
+</html>
