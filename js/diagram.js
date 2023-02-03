@@ -1,6 +1,6 @@
 import loadData from './dataloader.js';
 
-const datapath = "./common/data/data1.csv";
+const datapath = "./common/data/data.csv";
 const defaults = {
     // the default settings for all shapes of the "rectangle" type
     rectangle: {
