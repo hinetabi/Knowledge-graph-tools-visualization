@@ -6,6 +6,7 @@ const datapath = config.datapath;
 const url_server = config.model_server;
 
 
+const datapath = "./common/data/data1.csv";
 const defaults = {
     // the default settings for all shapes of the "rectangle" type
     rectangle: {
