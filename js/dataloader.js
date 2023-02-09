@@ -1,7 +1,7 @@
 // load the data from file csv
 // return a array
-export default async function loadData(filename){
-    const array = await readCSV(filename);
+export const loadDataFromArray =  async (array) => {
+    // const array = await readCSV(filename);
     const node = getDistinctStrings(array); 
     let data = [];
    
@@ -22,20 +22,21 @@ export default async function loadData(filename){
             data.push({from: array[i][0], to: array[i][2], forwardArrow : true, 
                 connectType: "straight", title : {text : [{text : array[i][1]}]}});
         }
-        
     }
     return data;
 }
 
 
+
+
 // read the distinct node (strings) from arrays
-function getDistinctStrings(arrays) {
+const getDistinctStrings = (arrays) => {
     const allStrings = arrays.flat().filter((_, i) => i % 3 !== 1);
     return Array.from(new Set(allStrings));
 }
 
 // read file csv: return a 2D array of strings
-export async function readCSV(fileName) {
+const readCSV = async (fileName) => {
     const response = await fetch(fileName);
     const text = await response.text();
     const lines = text.split("\n");
@@ -47,5 +48,34 @@ export async function readCSV(fileName) {
             rows[i][j] = rows[i][j].replace(/\r+/, '');
         }
     }
+    // console.log(rows);
     return rows;
+}
+
+
+
+const request = ( url, params = {}, method = 'GET' ) => {
+    let options = {
+        method
+    };
+    if ( 'GET' === method ) {
+        url += '?' + ( new URLSearchParams( params ) ).toString();
+    } else {
+        options.body = JSON.stringify( params );
+    }
+    return fetch( url, options ).then( response => response.json() );
+};
+
+// export const getAPIDataFromServer = async ( url, params ) => request( url, params, 'GET' );
+
+export const getAPIDataFromServer = async (url, params, method='GET' ) => request(url, params, 'GET' );
+
+// init the data when reload
+export const initData = async (datapath, diagram) => {
+    // read the data from local storage
+    const array = await readCSV(datapath);
+    console.log(array);
+    const data = await loadDataFromArray(array); 
+    console.log(data);
+    diagram.data.parse(data);
 }
