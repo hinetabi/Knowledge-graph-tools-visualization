@@ -40,24 +40,44 @@
 		.dhx_sample-widget {
 			height: 100%;
 		}
+
+		.dhx_sample-controls-text {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 60px;
+			height: 60px;
+			border-bottom: 1px solid #DFDFDF;
+			font-family: Arial,Tahoma,Verdana,sans-serif;
+			font-size: 16px;
+		}
 	</style>
 	
 </head>
 
 <body>
-	
+	<!-- input text -->
+	<section id = "input" class="dhx_sample-controls-text">
+		<!--TODO: add text -->
+		<label for = "text">Enter your text: </label>
+		<input type="text" id = "input-text" name = "text">
+	</section>
+
+
 	<!-- edit button -->
 	<section id="control" class="dhx_sample-controls">
 		<!--TODO: edit the digram -->
 		<button id = "button-edit" class="dhx_sample-btn dhx_sample-btn--flat">Edit</button>
 
 		<!-- TODO: export to pdf -->
-		<button id = "export-to-pdf" class="dhx_sample-btn dhx_sample-btn--flat">Export to PDF</button>
+		<button id = "test-sample-data" class="dhx_sample-btn dhx_sample-btn--flat">Test with sample data</button>
 
 		<!-- TODO: import file csv -->
-		<button id = "import-csv-file"class="dhx_sample-btn dhx_sample-btn--flat" onclick="">Import CSV</button>
+		<button id = "send-api"class="dhx_sample-btn dhx_sample-btn--flat" onclick="">Build Knowledge Graph</button>
 	</section> 
 	
+
+
 
 	<!-- HTML container -->
 	<section id="container" class="dhx_sample-container__without-editor">

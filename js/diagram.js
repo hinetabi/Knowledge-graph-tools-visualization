@@ -1,5 +1,6 @@
-import { loadDataFromArray, initData, getAPIDataFromServer } from './dataloader.js';
+import { loadDataFromArray, initData, getAPIDataFromServer, readJsonFile, readJsonObject} from './dataloader.js';
 import config from './config.json' assert { type : 'json'};
+import data from './data.json' assert { type : 'json'};
 
 // add const variables
 const datapath = config.datapath;
@@ -105,16 +106,54 @@ buttonEdit.addEventListener("click", () => {
   runEditor();
 });
 
-// button export to pdf
-const buttonExport = document.querySelector("#export-to-pdf");
-buttonExport.addEventListener("click", () => {
-  test();
+
+// button test with sample data
+const buttonExport = document.querySelector("#test-sample-data");
+buttonExport.addEventListener("click", async () => {
+    console.log("test with sample data");
+    // load json object from file
+    const jsonObject = await readJsonFile('./js/data.json');
+    // load data from json object
+    const array = readJsonObject(data); 
+    // convert data to json object optional for graph
+    const loadableData = await loadDataFromArray(array);
+    // load data to editor
+    expand();
+    editor.parse(loadableData);
 });
 
-// button export to pdf
-const buttonImport = document.querySelector("#import-csv-file");
-buttonImport.addEventListener("click", () => {
-  test();
+// button send api to back end
+const buttonImport = document.querySelector("#send-api");
+buttonImport.addEventListener("click", async () => {
+
+    const input = document.getElementById("input-text");
+    let text = input.value;
+    if (text === "") {
+        alert("Please enter the text");
+        return;
+        // text = `Machine learning is a type of artificial intelligence (AI) that involves the use of algorithms and statistical models to enable computer systems to learn and improve from experience, without being explicitly programmed to do so.
+        // In machine learning, data is fed into a model, which then uses this data to make predictions or decisions. The model is designed to learn from the data, improving its accuracy over time as it processes more information.
+        // Machine learning is used in a wide range of applications, including image recognition, natural language processing, and predictive analytics. It can be divided into several subfields, such as supervised learning, unsupervised learning, and reinforcement learning, each of which has its own specific techniques and methods.
+        // Supervised learning involves training a model with labeled data, where the correct output is provided for each input. Unsupervised learning involves finding patterns in unlabeled data. Reinforcement learning involves training a model to make decisions based on rewards or penalties.
+        // Machine learning has become an increasingly important technology in recent years, as advances in computing power, data storage, and algorithm development have made it possible to build more sophisticated models that can handle larger and more complex data sets.`
+    }
+    console.log(text);
+    // return;
+
+    console.log("connect to server");
+    const jsonObject = await getAPIDataFromServer(url_server, {
+        "text" : text}, 'GET');
+    console.log(jsonObject);
+
+    // load data from json object
+    const array = readJsonObject(jsonObject);
+
+    // convert data to json object optional for graph
+    const loadableData = await loadDataFromArray(array);
+    console.log(loadableData);
+    // load data to editor
+    expand();
+    editor.parse(loadableData);
 });
 
 
@@ -128,15 +167,12 @@ editor.events.on("ResetButton", () => {
 });
 
 function test() {
-    console.log("connect to server");
-    getAPIDataFromServer(url_server, {
-        "text" : "Elon Musk is a business magnate, industrial designer, and engineer. He is the founder, CEO, CTO, and chief designer of SpaceX. He is also early investor, CEO, and product architect of Tesla, Inc. He is also the founder of The Boring Company and the co-founder of Neuralink. A centibillionaire, Musk became the richest person in the world in January 2021, with an estimated net worth of $185 billion at the time, surpassing Jeff Bezos. Musk was born to a Canadian mother and South African father and raised in Pretoria, South Africa. He briefly attended the University of Pretoria before moving to Canada aged 17 to attend Queen's University. He transferred to the University of Pennsylvania two years later, where he received dual bachelor's degrees in economics and physics. He moved to California in 1995 to attend Stanford University, but decided instead to pursue a business career. He went on co-founding a web software company Zip2 with his brother Kimbal Musk."
-    }, 'GET').then(data => console.log(data['relations'])) 
-    alert("Chua co gi dau hehe.");
+    
 }
 
 
 // get the csv file
 // loading data then reload
 document.getElementById("container").addEventListener("load", initData(datapath, diagram))
+
 

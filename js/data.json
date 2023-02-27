@@ -1,0 +1,77 @@
+[
+    {
+      "head": "machine learning",
+      "type": "part of",
+      "tail": "artificial intelligence"
+    },
+    {
+      "head": "artificial intelligence",
+      "type": "has part",
+      "tail": "machine learning"
+    },
+    {
+      "head": "machine learning",
+      "type": "part of",
+      "tail": "artificial intelligence"
+    },
+    {
+      "head": "ChatGPT",
+      "type": "developer",
+      "tail": "OpenAI"
+    },
+    {
+      "head": "OpenAI",
+      "type": "product or material produced",
+      "tail": "ChatGPT"
+    },
+    {
+      "head": "OpenAI",
+      "type": "product or material produced",
+      "tail": "ChatGPT"
+    },
+    {
+      "head": "ChatGPT",
+      "type": "developer",
+      "tail": "OpenAI"
+    },
+    {
+      "head": "ChatGPT",
+      "type": "developer",
+      "tail": "OpenAI"
+    },
+    {
+      "head": "ChatGPT",
+      "type": "developer",
+      "tail": "OpenAI"
+    },
+    {
+      "head": "ChatGPT",
+      "type": "instance of",
+      "tail": "language model"
+    },
+    {
+      "head": "ChatGPT",
+      "type": "developer",
+      "tail": "OpenAI"
+    },
+    {
+      "head": "OpenAI",
+      "type": "product or material produced",
+      "tail": "ChatGPT"
+    },
+    {
+      "head": "OpenAI",
+      "type": "product or material produced",
+      "tail": "ChatGPT"
+    },
+    {
+      "head": "ChatGPT",
+      "type": "instance of",
+      "tail": "language model"
+    },
+    {
+      "head": "ChatGPT",
+      "type": "developer",
+      "tail": "OpenAI"
+    }
+  ]

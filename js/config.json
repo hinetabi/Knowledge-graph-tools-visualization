@@ -1,5 +1,5 @@
 {
     "datapath" : "./common/data/data.csv",
-    "model_server": "http://127.0.0.1:5000/"
-    
+    "model_server": "http://127.0.0.1:5000/",
+    "number_of_source_seleted" : 1
 }
