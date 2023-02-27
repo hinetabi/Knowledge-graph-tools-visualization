@@ -28,8 +28,6 @@ export const loadDataFromArray = async (array) => {
     return data;
 }
 
-
-
 // read the distinct node (strings) from arrays
 const getDistinctStrings = (arrays) => {
     const allStrings = arrays.flat().filter((_, i) => i % 3 !== 1);
@@ -51,7 +49,6 @@ const readCSV = async (fileName) => {
     }
     return rows;
 }
-
 
 // get request from server
 const request = (url, params = {}, method = 'GET') => {
@@ -82,6 +79,7 @@ const capitalizeFirstLetter = (string) => {
     string = string.toLowerCase();
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
 // read data from JSON Object and return a 2D array
 export const readJsonObject = (jsonObject) => {
     const array = [];
@@ -112,7 +110,6 @@ export const readJsonFile = async (filePath) => {
     try {
         // read json file
         const response = await fetch(filePath);
-        // console.log(response);
         const data = response.json();
         return data;
     } catch (error) {

@@ -131,11 +131,6 @@ buttonImport.addEventListener("click", async () => {
     if (text === "") {
         alert("Please enter the text");
         return;
-        // text = `Machine learning is a type of artificial intelligence (AI) that involves the use of algorithms and statistical models to enable computer systems to learn and improve from experience, without being explicitly programmed to do so.
-        // In machine learning, data is fed into a model, which then uses this data to make predictions or decisions. The model is designed to learn from the data, improving its accuracy over time as it processes more information.
-        // Machine learning is used in a wide range of applications, including image recognition, natural language processing, and predictive analytics. It can be divided into several subfields, such as supervised learning, unsupervised learning, and reinforcement learning, each of which has its own specific techniques and methods.
-        // Supervised learning involves training a model with labeled data, where the correct output is provided for each input. Unsupervised learning involves finding patterns in unlabeled data. Reinforcement learning involves training a model to make decisions based on rewards or penalties.
-        // Machine learning has become an increasingly important technology in recent years, as advances in computing power, data storage, and algorithm development have made it possible to build more sophisticated models that can handle larger and more complex data sets.`
     }
     console.log(text);
     // return;
@@ -165,11 +160,6 @@ editor.events.on("ApplyButton", () => {
 editor.events.on("ResetButton", () => {
     collapse();
 });
-
-function test() {
-    
-}
-
 
 // get the csv file
 // loading data then reload
